@@ -1,16 +1,18 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { View, TouchableWithoutFeedback } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import * as yup from 'yup';
+import { useHistory } from 'react-router-native';
 
 import Text from './Text';
 import FormikTextInput from './FormikTextInput'
+import useSignIn from '../hooks/useSignIn';
 
 const initialValues = {
   username: '',
   password: '',
 };
-
+  
 const validationSchema = yup.object().shape({
   username: yup
     .string()
@@ -25,18 +27,29 @@ const SignInForm = ({ onSubmit }) => {
     <View>
       <FormikTextInput name="username" placeholder="username" />
       <FormikTextInput name="password" placeholder="password" />
-      <TouchableWithoutFeedback onPress={onSubmit}>
+      <TouchableOpacity onPress={onSubmit}>
         <Text>login</Text>
-      </TouchableWithoutFeedback>
+      </TouchableOpacity>
     </View>
   );
 };
 
-const onSubmit = (values) => {
-  console.log(values);
-};
+
 
 const SignIn = () => {
+  const [signIn] = useSignIn();
+  const history = useHistory();
+
+  const onSubmit = async (values) => {
+    console.log('clicked');
+    const { username, password } = values;
+    try {
+      await signIn({ username, password });
+      history.push('/');
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}  validationSchema={validationSchema}>
     {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
