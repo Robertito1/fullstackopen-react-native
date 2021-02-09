@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik } from 'formik';
-import { View, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import * as yup from 'yup';
 import { useHistory } from 'react-router-native';
 
@@ -12,7 +12,34 @@ const initialValues = {
   username: '',
   password: '',
 };
-  
+
+const styles = StyleSheet.create({
+  input:{
+    width: '80%',
+    margin: 'auto',
+    height: '4rem',
+    marginTop: '20px',
+    marginBottom: '20px',
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    borderRadius: '8px'
+  },
+   submit:{
+    width: '80%',
+    margin: 'auto',
+    height: '3.5rem',
+    backgroundColor: 'purple',
+    textAlign: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderRadius: '8px'
+   },
+   text:{
+     color: 'white',
+     fontSize: '800',
+     fontWeight: 'bold'
+    }
+});
 const validationSchema = yup.object().shape({
   username: yup
     .string()
@@ -25,10 +52,10 @@ const SignInForm = ({ onSubmit }) => {
  
   return (
     <View>
-      <FormikTextInput name="username" placeholder="username" />
-      <FormikTextInput name="password" placeholder="password" />
-      <TouchableOpacity onPress={onSubmit}>
-        <Text>login</Text>
+      <FormikTextInput name="username" placeholder="username" style={styles.input}/>
+      <FormikTextInput name="password" placeholder="password" style={styles.input} secureTextEntry/>
+      <TouchableOpacity onPress={onSubmit} style={styles.submit}>
+        <Text style={styles.text}>Login</Text>
       </TouchableOpacity>
     </View>
   );

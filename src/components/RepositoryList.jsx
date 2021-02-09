@@ -8,6 +8,7 @@ import useRepositories from '../hooks/useRepositories';
 const styles = StyleSheet.create({
   separator: {
     height: 10,
+    backgroundColor: '#808080'
   },
 });
 
