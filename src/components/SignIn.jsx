@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     margin: 'auto',
     height: '3.5rem',
     backgroundColor: 'purple',
-    textAlign: 'center',
     alignContent: 'center',
     justifyContent: 'center',
     borderRadius: 5
@@ -33,7 +32,8 @@ const styles = StyleSheet.create({
    text:{
      color: 'white',
      fontSize: 30,
-     fontWeight: 'bold'
+     fontWeight: 'bold',
+     alignSelf: 'center'
     }
 });
 

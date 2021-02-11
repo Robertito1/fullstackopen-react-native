@@ -8,6 +8,8 @@ import theme from '../theme';
 
 import { Route, Switch, Redirect } from 'react-router-native';
 import SignIn from './SignIn';
+import CreateReview from './createReview';
+import SignUp from './signUp';
 
 
 const styles = StyleSheet.create({
@@ -22,6 +24,12 @@ const Main = () => {
     <View style={styles.container}>
     <AppBar/>
     <Switch>
+        <Route path='/sign-up' exact>
+          <SignUp />
+        </Route>
+        <Route path='/create-review' exact>
+          <CreateReview />
+        </Route>
         <Route path="/login" exact>
           <SignIn />
         </Route>

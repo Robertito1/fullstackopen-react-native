@@ -67,6 +67,12 @@ const AppBar = () => {
         {!data?.authorizedUser && (
           <AppBarTab link='/login' buttonText='Sign in' />
         )}
+        {data?.authorizedUser && (
+          <AppBarTab link='/create-review' buttonText='Create a review' />
+        )}
+        {!data?.authorizedUser && (
+          <AppBarTab link='/sign-up' buttonText='Sign up' />
+        )}
       {data?.authorizedUser && <SignOutTab />}
       </ScrollView>
     </View>
