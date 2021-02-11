@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native'
 import AppBar from './Appbar';
 import RepositoryList from './RepositoryList';
+import Repository from './Repository';
 import theme from '../theme';
 
 
@@ -23,6 +24,9 @@ const Main = () => {
     <Switch>
         <Route path="/login" exact>
           <SignIn />
+        </Route>
+        <Route path='/:id' exact>
+          <Repository />
         </Route>
         <Route path="/" exact>
           <RepositoryList />
