@@ -39,6 +39,7 @@ const RepositoryItem = ({repository, isAPage}) => {
   const inThousands = num/1000
   return inThousands.toFixed(1)
  }
+
   return (
       <View style={styles.itemContainer}>
        <View style={styles.flexContainer}>
