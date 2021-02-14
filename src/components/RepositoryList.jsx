@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from "react-router-native";
 import { FlatList, View, StyleSheet, TouchableOpacity } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select'
+import theme from '../theme';
+
 
 
 import RepositoryItem from './RepositoryItem';
@@ -15,16 +17,46 @@ const styles = StyleSheet.create({
 });
 
 const OrderBy = ({order, setOrder}) => {
+  const styles = StyleSheet.create({
+    container: {
+      margin: 15,
+      marginVertical: 5,
+      marginRight: 25,
+    },
+    inputWeb: {
+      borderWidth: 1,
+      backgroundColor: theme.colors.main,
+      fontSize: theme.fontSizes.body,
+      height: 30,
+      paddingRight: 60,
+    },
+    inputAndroid: {
+      borderWidth: 1,
+      height: 60,
+      fontSize: theme.fontSizes.body,
+      paddingRight: 30,
+    },
+    inputIOS: {
+      borderWidth: 1,
+      height: 60,
+      fontSize: theme.fontSizes.body,
+      paddingRight: 30,
+    }
+  });
   return (
-      <RNPickerSelect
-          onValueChange={(value) => setOrder(value)}
-          items={[
-              { label: 'Latest', value: 'latestCreated' },
-              { label: 'Higest', value: 'highestRated' },
-              { label: 'Lowest', value: 'lowestRated' },
-          ]}
-          value={order}
-      />
+    <View style={styles.container}>
+    <RNPickerSelect
+      style={styles}
+      onValueChange={(value) => setOrder(value)}
+      items={[
+        { label: 'Latest repositories', value: 'latestRelated' },
+        { label: 'Highest rated repositories', value: 'highestRated' },
+        { label: 'Lowest rated repositories', value: 'lowestRated' },
+      ]}
+      placeholder={{}}
+      value={order}
+    />
+  </View>
   );
 };
 
@@ -56,7 +88,7 @@ export const RepositoryListContainer = ({ repositories, onEndReach, setOrder, or
 
 const RepositoryList = () => {
   const [order, setOrder] = useState('latestCreated')
-  const { repositories, fetchMore } = useRepositories({order, first: 5});
+  const { repositories, fetchMore } = useRepositories({order, first: 10});
 
  const handleOrderChange = (value) =>{
     setOrder(value)

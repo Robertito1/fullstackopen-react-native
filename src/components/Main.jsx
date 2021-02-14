@@ -10,7 +10,7 @@ import { Route, Switch, Redirect } from 'react-router-native';
 import SignIn from './SignIn';
 import CreateReview from './createReview';
 import SignUp from './signUp';
-
+import MyReviews from './MyReviews';
 
 const styles = StyleSheet.create({
     container: {
@@ -24,6 +24,9 @@ const Main = () => {
     <View style={styles.container}>
     <AppBar/>
     <Switch>
+        <Route path='/my-reviews' exact>
+          <MyReviews />
+        </Route>
         <Route path='/sign-up' exact>
           <SignUp />
         </Route>

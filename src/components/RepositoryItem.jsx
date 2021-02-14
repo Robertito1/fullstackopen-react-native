@@ -32,6 +32,18 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     alignSelf: 'flex-start',
     color: 'white'
+  },
+  buttonContainer:{
+    width: '90%',
+    margin: 'auto',
+    height: '3.5rem',
+    backgroundColor: 'purple',
+    alignContent: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    textAlign: 'center',
+    marginTop: 50,
+    marginBotton: 30
   }
 });
 const RepositoryItem = ({repository, isAPage}) => {
@@ -76,8 +88,8 @@ const RepositoryItem = ({repository, isAPage}) => {
        {isAPage && (
          //fix url redirect by intalling the tight version of expo-web-browser
         <TouchableOpacity onPress={() => {WebBrowser.openBrowserAsync(repository.url)}}>
-          <View style={styles.containerButton}>
-            <Text color='textSecondary' fontWeight='bold'>
+          <View style={styles.buttonContainer}>
+            <Text fontSize='subheading' fontWeight='bold' style={{color: 'white'}}>
               Open in Github
             </Text>
           </View>

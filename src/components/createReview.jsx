@@ -26,14 +26,16 @@ const CreateReviewForm = ({ onSubmit }) => {
       paddingVertical: 15,
       paddingHorizontal: 10,
     },
-    buttonContainer: {
-      backgroundColor: theme.colors.secondary,
-      alignItems: 'center',
-      flexGrow: 1,
-      padding: 17,
-      borderRadius: 3,
-      height: 50,
-    },
+    buttonContainer:{
+      width: '100%',
+      margin: 'auto',
+      height: '3.5rem',
+      backgroundColor: 'purple',
+      alignContent: 'center',
+      justifyContent: 'center',
+      borderRadius: 5,
+      textAlign: 'center',
+    }
   });
 
   return (
@@ -69,7 +71,7 @@ const CreateReviewForm = ({ onSubmit }) => {
       </View>
       <TouchableOpacity onPress={onSubmit}>
         <View style={styles.buttonContainer}>
-          <Text color='textSecondary' fontWeight='bold'>
+          <Text fontWeight='bold' fontSize='subheading' style={{color: 'white'}}>
             Create a review
           </Text>
         </View>

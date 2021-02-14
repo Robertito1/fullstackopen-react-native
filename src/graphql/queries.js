@@ -69,3 +69,30 @@ query getRepository($id: ID!){
   }
 }
 `
+export const GET_MY_REVIEWS = gql`
+  query getMyReviews($first: Int, $after: String) {
+    authorizedUser {
+      id
+      username
+      reviews(first: $first, after: $after) {
+        pageInfo {
+          ...PageInfo
+        }
+        edges {
+          node {
+            id
+            rating
+            text
+            createdAt
+            repositoryId
+            repository {
+              id
+              fullName
+            }
+          }
+        }
+      }
+    }
+  }
+  ${PAGE_INFO}
+`;
