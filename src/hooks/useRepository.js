@@ -1,4 +1,4 @@
-import {GET_REPOSITORY} from '../graphql/queries'
+import {GET_REPOSITORY} from '../graphql/queries';
 import { useQuery } from "@apollo/client";
 
 const useRepository = ({id}) => {

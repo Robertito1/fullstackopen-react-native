@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useHistory } from 'react-router-native';
 
 import Text from './Text';
-import FormikTextInput from './FormikTextInput'
+import FormikTextInput from './FormikTextInput';
 import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({

@@ -44,7 +44,7 @@ const Buttons = ({ review, refetch }) => {
   });
 
   const handleDeleteReview = () => {
-      console.log('pressed')
+      console.log('pressed');
     Alert.alert(
       'Delete review',
       'Are you sure you want to delete this review?',

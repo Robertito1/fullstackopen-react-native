@@ -1,5 +1,5 @@
 
-import {GET_REPOSITORIES} from '../graphql/queries'
+import {GET_REPOSITORIES} from '../graphql/queries';
 import { useQuery } from "@apollo/client";
 import { useDebounce } from 'use-debounce';
 
@@ -24,7 +24,7 @@ const useRepositories = ({ order,searchInput, first }) => {
   };
 
   const variables = { ...arrangeOrder(order), searchInput: value, first};
-  const { data, loading } = useQuery(GET_REPOSITORIES, {
+  const { data, loading, fetchMore, ...result  } = useQuery(GET_REPOSITORIES, {
     variables,
     fetchPolicy: 'cache-and-network',
   });
@@ -62,6 +62,7 @@ const useRepositories = ({ order,searchInput, first }) => {
     repositories: data?.repositories,
     loading,
     fetchMore: handleFetchMore,
+    ...result
   };
-}
+};
 export default useRepositories;

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
-import Constants from 'expo-constants';
 import { Link, useHistory } from 'react-router-native';
 import Text from './Text';
 import theme from '../theme';
@@ -59,7 +58,7 @@ const AppBarTab = ({ link, buttonText }) => {
 
 const AppBar = () => {
   const { data } = useQuery(GET_AUTHORIZED_USER);
-  console.log(data)
+  console.log(data);
   return (
     <View style={styles.container}>
       <ScrollView horizontal>

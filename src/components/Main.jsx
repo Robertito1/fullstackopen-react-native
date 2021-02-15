@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native'
+import {View, StyleSheet} from 'react-native';
 import AppBar from './Appbar';
 import RepositoryList from './RepositoryList';
 import Repository from './Repository';
@@ -45,7 +45,7 @@ const Main = () => {
         <Redirect to="/" />
     </Switch>
     </View>
-    )
+    );
 };
 
 export default Main;

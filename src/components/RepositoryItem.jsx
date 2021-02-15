@@ -1,7 +1,7 @@
 import React from 'react';
 import * as WebBrowser from 'expo-web-browser';
-import {View, Image, StyleSheet, TouchableOpacity} from 'react-native'
-import Text from './Text'
+import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
+import Text from './Text';
 
 
 const styles = StyleSheet.create({
@@ -48,9 +48,9 @@ const styles = StyleSheet.create({
 });
 const RepositoryItem = ({repository, isAPage}) => {
  const toOneDecimal = (num) =>{
-  const inThousands = num/1000
-  return inThousands.toFixed(1)
- }
+  const inThousands = num/1000;
+  return inThousands.toFixed(1);
+ };
 
   return (
       <View style={styles.itemContainer}>
@@ -87,7 +87,7 @@ const RepositoryItem = ({repository, isAPage}) => {
        </View>
        {isAPage && (
          //fix url redirect by intalling the tight version of expo-web-browser
-        <TouchableOpacity onPress={() => {WebBrowser.openBrowserAsync(repository.url)}}>
+        <TouchableOpacity onPress={() => {WebBrowser.openBrowserAsync(repository.url);}}>
           <View style={styles.buttonContainer}>
             <Text fontSize='subheading' fontWeight='bold' style={{color: 'white'}}>
               Open in Github
@@ -99,4 +99,4 @@ const RepositoryItem = ({repository, isAPage}) => {
   );
 };
 
-export default RepositoryItem
+export default RepositoryItem;

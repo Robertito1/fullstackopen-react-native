@@ -112,7 +112,7 @@ export const SignUpContainer = ({ onSubmit }) => {
 
 const SignUp = () => {
   const [signUp] = useSignUp();
-  const [signIn] = useSignIn()
+  const [signIn] = useSignIn();
   const history = useHistory();
 
   const onSubmit = async (values) => {

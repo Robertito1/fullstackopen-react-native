@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-native";
 import { FlatList, View, StyleSheet, TouchableOpacity } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select'
+import RNPickerSelect from 'react-native-picker-select';
 import theme from '../theme';
 
 
@@ -66,10 +66,10 @@ export const RepositoryListContainer = ({ repositories, onEndReach, setOrder, or
   const repositoryNodes = repositories
     ? repositories.edges.map((edge) => edge.node)
     : [];
-    const history = useHistory()
+    const history = useHistory();
     const gotoRepository =(id)=>{
-    history.push(`/${id}`)
-}
+    history.push(`/${id}`);
+};
   return (
     <FlatList
       data={repositoryNodes}
@@ -87,12 +87,12 @@ export const RepositoryListContainer = ({ repositories, onEndReach, setOrder, or
 };
 
 const RepositoryList = () => {
-  const [order, setOrder] = useState('latestCreated')
+  const [order, setOrder] = useState('latestCreated');
   const { repositories, fetchMore } = useRepositories({order, first: 10});
 
  const handleOrderChange = (value) =>{
-    setOrder(value)
-  }
+    setOrder(value);
+  };
 
   const onEndReach = () => {
     fetchMore();

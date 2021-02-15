@@ -68,7 +68,7 @@ query getRepository($id: ID!){
     }
   }
 }
-`
+`;
 export const GET_MY_REVIEWS = gql`
   query getMyReviews($first: Int, $after: String) {
     authorizedUser {

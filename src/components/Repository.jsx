@@ -28,7 +28,7 @@ return (
         <View>
          <RepositoryItem repository={repository} isAPage/>
         </View>
-     )
+     );
   };
   
   const ReviewItem = ({ review }) => {

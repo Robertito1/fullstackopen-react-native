@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
 import {RepositoryListContainer} from "./RepositoryList";
 import { render } from '@testing-library/react-native';
 
 
 const toOneDecimal = (num) =>{
     if(num > 1000){
-     const inThousands = num/1000
-    return `${inThousands.toFixed(1)}k`
+     const inThousands = num/1000;
+    return `${inThousands.toFixed(1)}k`;
   }
-  return num
-   }
+  return num;
+   };
 describe('RepositoryList', () => {
     describe('RepositoryListContainer', () => {
       it('renders repository information correctly', () => {
